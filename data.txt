@@ -1,0 +1,4 @@
+<html>
+2020-10-01 11:47:43 Thu Humidity 48.73 % Pressure 30.01 InHg Temperature 79.4 F
+</html>
+2020-10-01 13:19:02 Thu Humidity 37.48 % Pressure 29.99 InHg Temperature 84.5 F2020-10-01 13:19:17 Thu Humidity 37.39 % Pressure 29.99 InHg Temperature 84.5 F2020-10-01 13:19:32 Thu Humidity 37.40 % Pressure 29.99 InHg Temperature 84.4 F2020-10-01 13:20:18 Thu Humidity 37.34 % Pressure 29.99 InHg Temperature 84.6 F
