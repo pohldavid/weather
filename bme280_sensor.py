@@ -13,11 +13,19 @@ while True:
     humidity  = bme280_data.humidity
     pressure  = bme280_data.pressure/33.8639
     temperature = (bme280_data.temperature * 9.0/5.0) +32
-    data = f"{timestamp.stamp()} Humidity {humidity:03.2f} % Pressure {pressure:03.2f} InHg Temperature {temperature:03.1f} F"
+    data = f"{timestamp.stamp()} Humidity {humidity:03.2f} % Pressure {pressure:03.2f} InHg Temperature {temperature:03.1f} F </br>"
     print( data)
 #    print(f"{timestamp.stamp()} Humidity {humidity:03.2f} % Pressure {pressure:03.2f} InHg Temperature {temperature:03.1f} F")
-    with open("data.txt", "a") as outfile:
-        outfile.write(str(data))
+    
+    try:
+        
+        with open("data.html", "a") as outfile:
+            outfile.write(str(data))
+            
+    except KeyboardInterrupt:
+        outfile.write('</br></html>')
         outfile.close()
-	
+        
+    
+    
     sleep(15)
