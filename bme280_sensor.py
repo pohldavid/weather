@@ -19,13 +19,15 @@ while True:
     
     try:
         
-        with open("data.html", "a") as outfile:
+        with open("/var/www/html/data.html", "a") as outfile:
             outfile.write(str(data))
             
     except KeyboardInterrupt:
-        outfile.write('</br></html>')
-        outfile.close()
+        print("Later Dude")
         
-    
+    finally:
+        with open("/var/www/html/data.html", "a") as outfile:
+            outfile.write('</html>')
+            outfile.close()
     
     sleep(15)
