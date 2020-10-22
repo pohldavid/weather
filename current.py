@@ -20,8 +20,6 @@ while True:
     
     try:
         
-        with open("/var/www/html/data.html", "a") as outfile:
-            outfile.write(str(data))
         with open("/var/www/html/current.html", "w") as outfile1:
             outfile1.write("<meta http-equiv='refresh' content='15'/> </br>")
             outfile1.write(str(current))
@@ -30,8 +28,7 @@ while True:
         print("Later Dude")
         
     finally:
-        with open("/var/www/html/data.html", "a") as outfile:
-            outfile.close()
+
         with open("/var/www/html/current.html", "a") as outfile1:
             outfile1.close()
     
