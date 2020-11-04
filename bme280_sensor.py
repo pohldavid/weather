@@ -35,4 +35,4 @@ while True:
         with open("/var/www/html/current.html", "a") as outfile1:
             outfile1.close()
     
-    sleep(15)
+    sleep(300)

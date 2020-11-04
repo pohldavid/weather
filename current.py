@@ -13,9 +13,9 @@ while True:
     humidity  = bme280_data.humidity
     pressure  = bme280_data.pressure/33.8639
     temperature = (bme280_data.temperature * 9.0/5.0) +32
-    data = f"{timestamp.stamp()} Humidity {humidity:03.2f} % Pressure {pressure:03.2f} InHg Temperature {temperature:03.1f} F </br>"
+#    data = f"{timestamp.stamp()} Humidity {humidity:03.2f} % Pressure {pressure:03.2f} InHg Temperature {temperature:03.1f} F </br>"
     current = f"<h1>{timestamp.stamp()}</h1><h1> Humidity {humidity:03.2f} %</h1><h1> Pressure {pressure:03.2f} InHg</h1><h1> Temperature {temperature:03.1f} F</h1> </br>"
-    print( data)
+    print(current)
 #    print(f"<html><h1> {timestamp.stamp()}</h1> Humidity {humidity:03.2f} % Pressure {pressure:03.2f} InHg Temperature {temperature:03.1f} F</html>")
     
     try:
