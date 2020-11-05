@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo raspistill --vflip --hflip -rot 270 /var/www/html/image.jpg
