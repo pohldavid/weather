@@ -1,0 +1,25 @@
+from astral import LocationInfo
+import datetime
+from astral.sun import sun
+
+city = LocationInfo("Hallettsville", "USA", "US/Central", 29.2829243, -96.8658090)
+print((
+    f"Information for {city.name}/{city.region}\n"
+    f"Timezone: {city.timezone}\n"
+    f"Latitude: {city.latitude:.02f}; Longitude: {city.longitude:.02f}\n"
+))
+
+date=datetime.date(2020, 11, 9)
+
+s = sun(city.observer, date, tzinfo=city.timezone)
+
+print(date)
+print((
+    f'Dawn:    {s["dawn"]}\n'
+    f'Sunrise: {s["sunrise"]}\n'
+    f'Noon:    {s["noon"]}\n'
+    f'Sunset:  {s["sunset"]}\n'
+    f'Dusk:    {s["dusk"]}\n'
+))
+
+#29.2829243, -96.8658090
