@@ -18,12 +18,17 @@ humidity  = bme280_data.humidity
 pressure  = bme280_data.pressure/33.8639
 temperature = (bme280_data.temperature * 9.0/5.0) +32
 
-
+current = f"Temperature {temperature:03.1f} F Humidity {humidity:03.2f} % Pressure {pressure:03.2f} InHg "
+print(current)
 
 
 temp = check_output(["/opt/vc/bin/vcgencmd", "measure_temp"])
-date = check_output("date")
-print(str(temp) +" " + str(date))
+date = check_output("date")  #get the system date
+
+#print(date)  # b'Fri 06 Nov 2020 08:03:21 AM CST\n' ---> why the b' and \n' ?
+#print(f"Current date: {date}")
+print(date.decode('utf-8').strip()) 
+date = date.decode('utf-8').strip()
 
 cam = picamera.PiCamera()
 cam.vflip = True
@@ -34,10 +39,11 @@ cam.resolution=(1024,768)
 cam.annotate_background = picamera.Color('black')
 cam.start_preview()
 time.sleep(2)
-cam.annotate_text = "Weather " + str(temperature) +datetime.now().strftime('%d-%m-%y %H:%M:%S')
+cam.annotate_text = str(date) + '\n' + current
 cam.capture('/home/pi/weather/stills/'+str(datetime.now())+'.jpg')
 
-timestamp = datetime.now().strftime('%d-%m-%y_%H-%M-%S')
+#print(datetime.now().strftime('%d-%m-%y %H:%M:%S'))
+
         
             
         
