@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Emacs  backup files
+.org~
+.py~
+.txt~
+
+
+
+
+

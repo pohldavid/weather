@@ -7,5 +7,5 @@ try:
         print('trying')
         sleep(1)
 except KeyboardInterrupt:
-    print('keyboard intterupt')
+    print('keyboard interrupt')
     sys.exit()

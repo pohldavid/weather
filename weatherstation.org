@@ -1,10 +1,35 @@
+#+STARTUP: showall
 
-Matplotlib
+* Python
+1. Read sensor
+2. Store data to CSV for history  [Humidity,Temp,Pressure,DateTime]  TSV so html wont see delimiters?
+3. Store data to .md file
+4. Matplotlib chart
+5. Python concatenate header, <meta http-equiv='refresh' content='15'/> </br>, chart, footer
+6. python md -> html
+7. 
+
+* pysimplegui
 
 Markdown -> html
 
-php include
+sys pandoc .md -> html
 
+sys cat files append head, body , foot
+
+awk e.g. temp only
+awk e.g. c->f
+
+* publish to github pages or the like
+
+* power saving
+kill webserver
+kill usb port
+
+
+
+
+* Plot
 #+NAME: Plot
 #+BEGIN_SRC python :results replace  :file plotimage.png
 import matplotlib.pyplot as plt
@@ -38,6 +63,22 @@ plt.show()
 
 #+RESULTS: Plot
 [[file:plotimage.png]]
+
+
+* Power
+#+NAME: Power
+#+BEGIN_SRC python :results output
+
+production =  40*5 # 40 watts @ 5 hrs insolataion
+
+consumption = 5*24 # 5 watts continuous
+
+print(production-consumption)
+
+#+END_SRC
+
+#+RESULTS: Power
+: 80
 
 
 

@@ -1,36 +1,57 @@
 from astral import LocationInfo
+#from astral import now, today
 import datetime
+from pytz import timezone
+#import pytz
 from astral.sun import sun
 
-city = LocationInfo("Hallettsville", "USA", "US/Central", 29.2829243, -96.8658090)
+central = timezone("US/Central")
+
+city = LocationInfo("Pohl Barn", "USA", "US/Central", 29.2829243, -96.8658090) # barn coordinates from google maps
+
 print((
     f"Information for {city.name}/{city.region}\n"
     f"Timezone: {city.timezone}\n"
     f"Latitude: {city.latitude:.02f}; Longitude: {city.longitude:.02f}\n"
-    
 ))
 
-#date=datetime.date(2020, 11, 9)
-date=datetime.datetime.today()
+today = datetime.datetime.today()
 
-zone=datetime.tzinfo.tzname(date)
+tomorrow = today + datetime.timedelta(days=1)
 
-print(zone)
+sun_today = sun(city.observer, today, tzinfo=city.timezone)
+sun_tomorrow = sun(city.observer, tomorrow, tzinfo=city.timezone)
 
-gmt=datetime.tzinfo.utcoffset(date)
-print(gmt)
-
-s = sun(ci/ty.observer, date, tzinfo=city.timezone)
-
-print(date.strftime("%A %d. %B %Y"))
+print(today.strftime("Today, %A %B %d, %Y"))
+print("-"*30)
 print((
-    f'Dawn:    {s["dawn"].strftime("%H:%M:%S %z")}\n'
-    f'Sunrise: {s["sunrise"].strftime("%H:%M:%S")}\n'
-    f'Noon:    {s["noon"]}\n'
-    f'Sunset:  {s["sunset"]}\n'
-    f'Dusk:    {s["dusk"]}\n'
+    f'Dawn:    {sun_today["dawn"].strftime("%H:%M:%S")}\n'
+    f'Sunrise: {sun_today["sunrise"].strftime("%H:%M:%S")}\n'
+    f'Noon:    {sun_today["noon"].strftime("%H:%M:%S")}\n'
+    f'Sunset:  {sun_today["sunset"].strftime("%H:%M:%S")}\n'
+    f'Dusk:    {sun_today["dusk"].strftime("%H:%M:%S")}\n'
 ))
 
-print(type(s['dawn']))
+print(tomorrow.strftime("Tomorrow, %A %B %d, %Y"))
+print("-"*30)
+print((
+    f'Dawn:    {sun_tomorrow["dawn"].strftime("%H:%M:%S")}\n'
+    f'Sunrise: {sun_tomorrow["sunrise"].strftime("%H:%M:%S")}\n'
+    f'Noon:    {sun_tomorrow["noon"].strftime("%H:%M:%S")}\n'
+    f'Sunset:  {sun_tomorrow["sunset"].strftime("%H:%M:%S")}\n'
+    f'Dusk:    {sun_tomorrow["dusk"].strftime("%H:%M:%S")}\n'
+))
 
-#29.2829243, -96.8658090
+
+localized_now =  central.localize(datetime.datetime.now())
+
+print(localized_now.strftime("Time now:  %H:%M:%S"))
+
+time_till_dawn = sun_tomorrow["dawn"] - localized_now
+seconds_till_dawn = time_till_dawn.total_seconds()
+
+print(seconds_till_dawn)
+
+
+    
+

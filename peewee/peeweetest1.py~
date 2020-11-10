@@ -1,0 +1,27 @@
+from peewee import *
+from datetime import date
+from datetime import time
+
+db = SqliteDatabase('history.db')
+
+
+class Reading(Model):
+    temperature = CharField()
+    humidity = CharField()
+    pressure = CharField()
+    day = DateField()
+    reading_time = TimeField()
+
+    class Meta:
+        database = db
+
+db.connect()
+
+db.create_tables([Person, Pet, Reading])
+
+this_reading = Reading(temperature='100', humidity = '50', pressure = '29', day=date(1960, 1, 15), reading_time=time(12,25,16))
+this_reading.save()
+
+print(this_reading.temperature)
+print(this_reading.day)
+print(this_reading.reading_time)
