@@ -1,9 +1,8 @@
 import bme280
 import smbus2
-from time import sleep
-import timestamp
 from peewee import *
-from datetime import *
+from datetime import datetime
+from datetime import date
 
 port = 1
 address = 0x77 # Adafruit BME280 address. Other BME280s may be different

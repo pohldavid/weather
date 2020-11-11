@@ -1,6 +1,5 @@
 import time
 
-
 def stamp():
     now = time.localtime(time.time())
     fmtnow = time.strftime('%Y-%m-%d %H:%M:%S %a',now)

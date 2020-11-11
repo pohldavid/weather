@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <title>Current Conditions</title>
+  </head>
+    <body>
+         <h1>Current Conditions - S.E. Lavaca County</h1>
+         <p>{{date}}</p>
+	 
+    </body>
+</html>
