@@ -26,15 +26,16 @@ while True:
     sun_tomorrow = sun(city.observer, tomorrow, tzinfo=city.timezone)
     localized_now =  central.localize(datetime.datetime.now())
     time_till_dawn = sun_tomorrow["dawn"] - localized_now
+    print("time till dawn ", time_till_dawn)
     seconds_till_dawn = time_till_dawn.total_seconds()
-    print(seconds_till_dawn)
+    print("seconds till dawn", seconds_till_dawn)
     
     sleep(seconds_till_dawn)
     print("Its Dawn")
     for pause in range(9):
         sleep(60*15)
         print("Its " + str(pause) + " quarter hours since dawn") 
-    
+    break
     
 
 
