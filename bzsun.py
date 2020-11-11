@@ -2,7 +2,7 @@ from astral import LocationInfo
 import datetime
 from astral.sun import sun
 
-city = LocationInfo("Hallettsville", "USA", "US/Central",17.1899, -88.4976)
+city = LocationInfo("Belize City", "BZ", "America/Belize",17.5046, -88.1962)
 print((
     f"Information for {city.name}/{city.region}\n"
     f"Timezone: {city.timezone}\n"
@@ -12,10 +12,10 @@ print((
 
 #date=datetime.date(2020, 11, 9)
 date=datetime.datetime.today()
-zone=datetime.tzinfo.tzname(date)
 
 
-s = sun(ci/ty.observer, date, tzinfo=city.timezone)
+
+s = sun(city.observer, date, tzinfo=city.timezone)
 
 print(date.strftime("%A %d. %B %Y"))
 print((
