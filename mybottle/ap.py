@@ -1,11 +1,12 @@
 from bottle import route, run, template
-
+from sensors import bme280
 import subprocess
 
 @route('/')
 def index():
-    content =  {'date':'tehdate', 'time':'tehtime', 'temp':'thetemp','press':'thepress','humidity':'thehumid'}
-    return template('current.tpl', content)
+    
+    data =  bme280.read()
+    return template('current.tpl', data)
 
 @route('/notemplate/<name>')
 def notemplate(name):

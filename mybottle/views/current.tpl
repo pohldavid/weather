@@ -5,15 +5,15 @@
     <body>
          <h1>Current Conditions - S.E. Lavaca County</h1>
 
-<p>inside the route for this page you need to run the current data module and return a dictionary of these valued</p>
-
-	 <p>{{date}}</p>
+	 <p>{{day}}</p>
 	 <p>{{time}}</p>
-	 <p>{{temp}}</p>
-	 <p>{{press}}</p>
+	 <p>{{temperature}}</p>
+	 <p>{{pressure}}</p>
 	 <p>{{humidity}}</p>
-	 
-	 
-	 
+
+
+	 <h2><a href = 'http://pwp.stevecassidy.net/bottle/templating.html'> bottle templates</a><h2>
+	     
+	     
     </body>
 </html>
