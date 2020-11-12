@@ -24,8 +24,7 @@ def test():
 def takepic():
     subprocess.call('./fakepic.sh')
 
-    
-    return("just a second - i took a picture")
+    return ('<p><img alt="image" src="fakepic.jpg"></p>')
 
 
 
