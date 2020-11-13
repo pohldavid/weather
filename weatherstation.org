@@ -7,25 +7,29 @@
 4. Matplotlib chart
 5. Python concatenate header, <meta http-equiv='refresh' content='15'/> </br>, chart, footer
 6. python md -> html
-7. 
+7. Markdown -> html
+8. sys pandoc .md -> html
+9. sys cat files append head, body , foot
+10. awk e.g. temp only
+11. awk e.g. c->f
 
-* pysimplegui
 
-Markdown -> html
+* turn on Outside light from rpi
 
-sys pandoc .md -> html
+* report weather from local area openweather api
 
-sys cat files append head, body , foot
-
-awk e.g. temp only
-awk e.g. c->f
+* set up on tripod
 
 * publish to github pages or the like
 
-* power saving
-kill webserver
-kill usb port
+* pysimplegui
 
+
+
+* power saving
+
+- kill webserver
+- kill usb port
 
 * bokeh
 
