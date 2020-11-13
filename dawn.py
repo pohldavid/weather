@@ -6,6 +6,7 @@ from pytz import timezone
 from astral.sun import sun
 from time import sleep
 
+import subprocess
 
 central = timezone("US/Central")
 
@@ -32,6 +33,7 @@ while True:
     
     sleep(seconds_till_dawn)
     print("Its Dawn")
+    subprocess.run(./takepic.sh)
     for pause in range(9):
         sleep(60*15)
         print("Its " + str(pause) + " quarter hours since dawn") 
