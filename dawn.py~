@@ -33,7 +33,7 @@ while True:
     
     sleep(seconds_till_dawn)
     print("Its Dawn")
-    subprocess.run('./takepic.sh')
+    subprocess.run(./takepic.sh)
     for pause in range(9):
         sleep(60*15)
         print("Its " + str(pause) + " quarter hours since dawn") 
