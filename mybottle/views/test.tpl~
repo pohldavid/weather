@@ -1,0 +1,3 @@
+<img src="fakepic.jpg">
+<img src="../fakepic.jpg">
+<img src="/fakepic.jpg">

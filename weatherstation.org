@@ -32,6 +32,7 @@
 - kill usb port
 
 * bokeh
+* https://plotly.com/python/plot-data-from-csv/
 
 * Plot
 #+NAME: Plot
