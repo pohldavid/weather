@@ -20,3 +20,9 @@ def read():
              "day" : day, "time" : time})
 
     return data
+
+
+
+if __name__ == "main":
+    read()
+

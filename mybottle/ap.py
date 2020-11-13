@@ -23,9 +23,11 @@ def test():
 @route('/pic')
 def takepic():
     subprocess.call('./fakepic.sh')
-
     return ('<p><img alt="image" src="fakepic.jpg"></p>')
 
+@route('/statimg')
+def staticimage():
+    return template('staticimage')
 
 
 
