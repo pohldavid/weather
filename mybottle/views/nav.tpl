@@ -7,6 +7,9 @@
      <a href = "/history">hstory</a>
 
      <a href = "/style">style</a>
+     
+     <a href = "/staticimage">staticimage</a>
+
    </nav>
 </header>
 

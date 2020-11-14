@@ -30,7 +30,7 @@ def takepic():
     subprocess.call('./fakepic.sh')
     return ('<p><img alt="image" src="fakepic.jpg"></p>')
 
-@route('/statimg')
+@route('/staticimage')
 def staticimage():
     return template('staticimage')
 

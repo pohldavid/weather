@@ -2,7 +2,8 @@ from astral import LocationInfo
 import datetime
 from astral.sun import sun
 
-city = LocationInfo("Belize City", "BZ", "America/Belize",17.5046, -88.1962)
+# location from termux-location
+city = LocationInfo("Belize City", "BZ", "America/Belize",17.5149, -88.2229)
 print((
     f"Information for {city.name}/{city.region}\n"
     f"Timezone: {city.timezone}\n"
