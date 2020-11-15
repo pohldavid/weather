@@ -11,6 +11,11 @@ def index():
     
     data =  bme280.read()
     return template('current.tpl', data)
+@route('/style')
+def style():
+    
+    data =  bme280.read()
+    return template('style.tpl', data)
 
 @route('/history/<date>')
 def notemplate(date):
