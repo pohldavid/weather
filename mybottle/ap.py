@@ -4,13 +4,17 @@ import subprocess
 
 @route('/')
 def index():
+    return template('home')
+
+@route('/current')
+def index():
     
     data =  bme280.read()
     return template('current.tpl', data)
 
-@route('/notemplate/<name>')
-def notemplate(name):
-    return('<h1>' + name + ' this page is html with no template</h1>')
+@route('/history/<date>')
+def notemplate(date):
+    return('<h1>' + 'this page will look up data for ' + date + ' with date in format YYYY-MM-DD' + '</h1>')
 
 @route('/atemplate/<name>')
 def atemplate(name):
@@ -25,10 +29,21 @@ def takepic():
     subprocess.call('./fakepic.sh')
     return ('<p><img alt="image" src="fakepic.jpg"></p>')
 
-@route('/statimg')
+@route('/staticimage')
 def staticimage():
     return template('staticimage')
 
+@route('/bulma')
+def bulma():
+    return template('bulmatemplate')
+
+@route('/navbar')
+def navbar():
+    return template('navbar')
+
+@route('/nearby')
+def nearby():
+    return template('nearby')
 
 
 

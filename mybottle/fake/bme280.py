@@ -1,4 +1,3 @@
-input('--------ATTENTION! This is fake bme280 -----------')
 
 """ for debugging purpose when running on pc rather than raspberry pi """
 
