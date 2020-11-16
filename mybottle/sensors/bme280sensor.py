@@ -1,5 +1,5 @@
-import bme280
-import smbus2
+from fake import bme280
+from fake import smbus2
 from datetime import datetime
 from datetime import date
 
@@ -12,7 +12,7 @@ bme280.load_calibration_params(bus, address)
 
 def read():
     reading = bme280.sample(bus,address)
-    day = date.today()
+    day = date.today().strftime("%Y-%m-%d")
     time = datetime.now().strftime("%H:%M:%S")
     data = ({"temperature" : reading.temperature,
              "humidity" : reading.humidity,

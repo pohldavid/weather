@@ -15,15 +15,7 @@ db = SqliteDatabase('history.db')
 class Readings(Model):
 
     temperature = CharField()
-    humidity = CharField()
-    pressure = CharField()
-    day = DateField()
-    reading_time = TimeField()
-
     class Meta:
-        database = db
-
-db.connect()
 
 db.create_tables([Readings])
 

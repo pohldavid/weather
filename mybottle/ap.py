@@ -1,5 +1,5 @@
 from bottle import route, run, template
-from sensors import bme280
+from sensors import bme280sensor
 import subprocess
 
 @route('/')
@@ -9,12 +9,13 @@ def index():
 @route('/current')
 def index():
     
-    data =  bme280.read()
+    data =  bme280sensor.read()
     return template('current.tpl', data)
+
 @route('/style')
 def style():
     
-    data =  bme280.read()
+    data =  bme280sensor.read()
     return template('style.tpl', data)
 
 @route('/history/<date>')
@@ -49,6 +50,21 @@ def navbar():
 @route('/nearby')
 def nearby():
     return template('nearby')
+
+
+@route('/history')
+def history():
+    
+    data =  bme280sensor.read()
+
+    subprocess.call('./mvlogprevious.sh')
+
+    with open("last", "w") as outfile:
+        outfile.write(str(data) + "\n")
+
+    subprocess.call('./log.sh')    
+
+    return template('current.tpl', data)    
 
 
 

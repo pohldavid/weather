@@ -12,7 +12,7 @@ bme280.load_calibration_params(bus, address)
 def read():
 
     sample = bme280.sample(bus,address)
-    day = date.today()
+    day = date.today().strftime("%Y-%m-%d")
     time = datetime.now().strftime("%H:%M:%S")
     temperature = sample.temperature
     humidity = sample.humidity
@@ -23,5 +23,4 @@ def read():
             "pressure":pressure}
     
     return(data)
-
 
