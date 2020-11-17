@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cat last previous > log
+cat current_reading copy_of_log > log

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-mv log previous
+mv log copy_of_log

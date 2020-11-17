@@ -22,6 +22,7 @@ print((
 while True:
     
     today = datetime.datetime.today()
+    todayint = today.strftime('%H')
     tomorrow = today + datetime.timedelta(days=1)
     sun_today = sun(city.observer, today, tzinfo=city.timezone)
     sun_tomorrow = sun(city.observer, tomorrow, tzinfo=city.timezone)
