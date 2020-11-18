@@ -17,7 +17,7 @@
         Home
       </a>
 
-      <a class="navbar-item">
+      <a class="navbar-item"><a href = "/current">current</a>
         Documentation
       </a>
 
@@ -42,7 +42,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </div><a href = "/current">current</a>
 
     <div class="navbar-end">
       <div class="navbar-item">
