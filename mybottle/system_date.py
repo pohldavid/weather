@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import subprocess
 
 print(subprocess.check_output('date').decode('ascii').strip())
