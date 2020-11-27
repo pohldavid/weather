@@ -13,6 +13,7 @@
 10. awk e.g. temp only
 11. awk e.g. c->f
 
+* script to auto ftp to cloud
 
 * turn on Outside light from rpi
 
