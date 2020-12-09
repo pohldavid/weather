@@ -1,0 +1,5 @@
+import os
+
+data1 = " the first line"
+data2 = 'the second line"
+

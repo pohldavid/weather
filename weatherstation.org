@@ -12,6 +12,8 @@
 9. sys cat files append head, body , foot
 10. awk e.g. temp only
 11. awk e.g. c->f
+12. jinja template to csv?
+13. tinydb ?
 
 * script to auto ftp to cloud
 
