@@ -14,9 +14,9 @@ def read():
     reading = bme280.sample(bus,address)
     day = date.today().strftime("%Y-%m-%d")
     time = datetime.now().strftime("%H:%M:%S")
-    data = ({"temperature" : (reading.temperature*9/5)+32,
-             "humidity" : reading.humidity,
-             "pressure" : reading.pressure,
+    data = ({"temperature" : f'{(reading.temperature*9/5)+32:.1f}',
+             "humidity" : f'{reading.humidity:.1f}',
+             "pressure" : f'{reading.pressure:.1f}',
              "day" : day, "time" : time})
 
     return data

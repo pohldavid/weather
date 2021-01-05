@@ -14,17 +14,5 @@
      <h2><a href = 'http://pwp.stevecassidy.net/bottle/templating.html'> bottle templates</a><h2>
 
     
-        
-    
-    % for name in names:
-        <li>{{name}}</li>
-    % end
-
-
-
-
-
-
-
     </body>
 </html>
