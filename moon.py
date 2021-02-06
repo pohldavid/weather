@@ -1,4 +1,4 @@
-#!/usr/bin/pyenv
+#! /usr/bin/python3
 
 import datetime
 import pylunar
@@ -19,9 +19,9 @@ print('now: ', now)
 
 print(now.year, now.month, now.day, now.hour, now.minute, now.second)
 
-print("\U+1F312")
-
-
+print('\u263D')
+print('\u263E')
+print('\u1F311')
 print(mi.age())
 print(mi.fractional_phase())
 print(mi.phase_name())
