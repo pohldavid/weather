@@ -1,0 +1,12 @@
+#!/usr/bin/pyenv
+
+import pylunar
+
+mi = pylunar.MoonInfo((17, 30, 5), (-88, 12, 12))
+
+mi.update((2021, 2, 5, 22, 00, 0))
+#mi.update((2021, 7, 19, 1, 45, 0))
+print(mi.age())
+print(mi.fractional_phase())
+print(mi.phase_name())
+print('unicode charater for moon')
