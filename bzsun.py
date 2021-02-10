@@ -1,3 +1,4 @@
+#! /usr/bin/python2
 from astral import LocationInfo
 import datetime
 from astral.sun import sun

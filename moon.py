@@ -3,9 +3,13 @@
 import datetime
 import pylunar
 
-mi = pylunar.MoonInfo((17, 30, 5), (-88, 12, 12))
+location = {'lat':(17, 30, 5), 'lon':(-88, 12, 12)}
 
-mi.update((2021, 2, 5, 22, 00, 0))
+observation_time = (2021, 2, 10, 13, 00, 0)
+
+mi = pylunar.MoonInfo(location['lat'], location['lon'])
+
+mi.update(observation_time)
 #mi.update((2021, 7, 19, 1, 45, 0))
 
 today = datetime.datetime.today()
@@ -13,16 +17,15 @@ print('today: ', today)
 
 print('year: ', today.year)
 
-
 now = datetime.datetime.now()
 print('now: ', now)
 
 print(now.year, now.month, now.day, now.hour, now.minute, now.second)
 
-print('\u263D')
-print('\u263E')
-print('\u1F311')
 print(mi.age())
 print(mi.fractional_phase())
-print(mi.phase_name())
-print('unicode charater for moon')
+print(mi.phase_name(),'\n')
+
+
+print("improve this script -> requires UTC date/time : calculate this from local time")
+print("calculate azimuth, elevation, etc.")
