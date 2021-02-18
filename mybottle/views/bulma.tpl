@@ -16,6 +16,11 @@
         My first website with <strong>Bulma</strong>!
       </p>
     </div>
+
   </section>
+  <a class="button is-success is-rounded">Open</a>
+   <a class="button is-warning is rounded">Close</a>
+  <a class="button is-danger is-rounded">Stop</a>
+
   </body>
 </html>

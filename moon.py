@@ -4,6 +4,15 @@ import datetime
 import pylunar
 
 location = {'lat':(17, 30, 5), 'lon':(-88, 12, 12)}
+location_name = 'Belize City'
+
+# convert local to UTC -> looks like 
+UTC_datetime = datetime.datetime.utcnow()
+UTC_s = UTC_datetime.strftime("%s")
+
+print(UTC_s.split('-')[0])
+
+
 
 observation_time = (2021, 2, 10, 13, 00, 0)
 
