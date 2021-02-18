@@ -3,38 +3,37 @@
 import datetime
 import pylunar
 
+import pytz
+
+print(pytz.utc)
+
 location = {'lat':(17, 30, 5), 'lon':(-88, 12, 12)}
 location_name = 'Belize City'
 
-# convert local to UTC -> looks like 
-UTC_datetime = datetime.datetime.utcnow()
-UTC_s = UTC_datetime.strftime("%s")
+# pylunar takes UTC time as a tuple
+UTC_now = datetime.datetime.utcnow()
 
-print(UTC_s.split('-')[0])
-
-
-
-observation_time = (2021, 2, 10, 13, 00, 0)
+observation_time = (UTC_now.year, UTC_now.month, UTC_now.day, UTC_now.hour, UTC_now.minute, UTC_now.second)
 
 mi = pylunar.MoonInfo(location['lat'], location['lon'])
 
 mi.update(observation_time)
-#mi.update((2021, 7, 19, 1, 45, 0))
-
-today = datetime.datetime.today()
-print('today: ', today)
-
-print('year: ', today.year)
 
 now = datetime.datetime.now()
-print('now: ', now)
 
-print(now.year, now.month, now.day, now.hour, now.minute, now.second)
+print(f'Observation time: {now:%Y-%m-%d %H:%M}')
 
-print(mi.age())
-print(mi.fractional_phase())
-print(mi.phase_name(),'\n')
+print(f'Moon age: {mi.age():0.2f} days')
 
+print(f'Moon phase: {(mi.fractional_phase())*100.0:0.2f} %')
 
-print("improve this script -> requires UTC date/time : calculate this from local time")
-print("calculate azimuth, elevation, etc.")
+print(f'Moon phase name: {mi.phase_name()}')
+
+print(f'Azimuth: {mi.azimuth():0.2f}')
+
+print(f'Altitude: {mi.altitude():0.2f}')
+
+print(f'Earth Distance: {mi.earth_distance():0.2f}')
+
+#print(f'Rise Set Times: {mi.rise_set_times('America/Chicago')}')
+# time to new moon, full mon
