@@ -3,10 +3,7 @@
 import datetime
 import pylunar
 
-import pytz
-
-print(pytz.utc)
-
+#import pytz
 location = {'lat':(17, 30, 5), 'lon':(-88, 12, 12)}
 location_name = 'Belize City'
 
@@ -33,7 +30,7 @@ print(f'Azimuth: {mi.azimuth():0.2f}')
 
 print(f'Altitude: {mi.altitude():0.2f}')
 
-print(f'Earth Distance: {mi.earth_distance():0.2f}')
+print(f'Earth Distance: {mi.earth_distance():,.2f} km [{mi.earth_distance()*0.62137:,.2f} mi]')
 
 #print(f'Rise Set Times: {mi.rise_set_times('America/Chicago')}')
-# time to new moon, full mon
+print('Add Rise/Set Times')
