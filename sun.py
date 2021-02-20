@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 from astral import LocationInfo
 #from astral import now, today
 import datetime
