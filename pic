@@ -1,0 +1,36 @@
+#! /usr/bin/python3
+
+from datetime import datetime
+from subprocess import call, check_output
+import picamera
+import time
+import os
+
+temp = check_output(["/opt/vc/bin/vcgencmd", "measure_temp"])
+date = check_output("date")  #get the system date
+
+#print(date)  # b'Fri 06 Nov 2020 08:03:21 AM CST\n' ---> why the b' and \n' ?
+#print(f"Current date: {date}")
+print(date.decode('utf-8').strip()) 
+date = date.decode('utf-8').strip()
+
+cam = picamera.PiCamera()
+cam.vflip = True
+cam.hflip=True
+cam.rotation = 270
+
+ 
+cam.resolution=(1024,768)
+cam.annotate_background = picamera.Color('black')
+cam.start_preview()
+time.sleep(2)
+cam.annotate_text = str(date) + '\n'
+cam.capture('/home/pi/weather/stills/'+str(datetime.now())+'.jpg')
+
+#print(datetime.now().strftime('%d-%m-%y %H:%M:%S'))
+
+        
+            
+        
+
+
