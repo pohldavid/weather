@@ -1,4 +1,4 @@
-from bottle import route, run, template, static_file
+from bottle import route, run, template, static_file, request
 from sensors import temperature_pressure_humidity
 # import subprocess
 
@@ -63,5 +63,28 @@ def history():
     data =  temperature_pressure_humidity.read()
 
     return template('history.tpl', data)    
+
+
+
+
+@route('/form')
+def index():
+    """Home Page"""
+
+    return template("form.tpl", message="Please enter your name")
+
+
+@route('/form', method="POST")
+def formhandler():
+    """Handle the form submission"""
+
+    first = request.forms.get('first')
+    last = request.forms.get('last')
+
+    message = "Hello " + first + " " + last + "."
+
+    return template("form.tpl", message=message)
+
+
 
 run(host='0.0.0.0', port=8080, debug = True, reloader = True)
