@@ -4,10 +4,6 @@ from sensors import temperature_pressure_humidity
 
 @route('/')
 def index():
-    return template('home')
-
-@route('/current')
-def index():
     
     data =  temperature_pressure_humidity.read()
     return template('current.tpl', data)

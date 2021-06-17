@@ -1,6 +1,9 @@
 <html>
   <head>
     <title>Current Conditions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   </head>
     <body>
          <h1>Current Conditions - S.E. Lavaca County</h1>
@@ -12,20 +15,6 @@
 	 <p>{{humidity}}</p>
 
 
-	 <h2><a href = 'http://pwp.stevecassidy.net/bottle/templating.html'> bottle templates</a><h2>
-
-	     <p> Current Data:
-	       <dl>
-		 <dt>Day</dt><dd>{{day}}</dd>
-		 <dt>Time</dt><dd>{{time}}</dd>
-		 <dt>Temperature</dt><dd>{{temperature}} Deg. F</dd>
-		 <dt>Barometer</dt><dd>{{pressure}} InHg</dd>
-		 <dt>Humidity</dt><dd>{{humidity}} %</dd>
-		 	 
-	       </dl>
-	       
-
-	     
-	     
+	 <h2><a href = 'http://pwp.stevecassidy.net/bottle/templating.html'> bottle templates</a><h2>		     
     </body>
 </html>
