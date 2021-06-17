@@ -12,10 +12,10 @@ class sample:
         self.bus = bus
         self.address = address
     
-    temperature = 'Fake 98.6'
+    temperature = 98.6
 
-    humidity = 'Fake 100'
+    humidity = 50
 
-    pressure = 'Fake 29.92'
+    pressure = 29.92
     
     
