@@ -32,5 +32,6 @@ print(f'Altitude: {mi.altitude():0.2f}')
 
 print(f'Earth Distance: {mi.earth_distance():,.2f} km [{mi.earth_distance()*0.62137:,.2f} mi]')
 
+print('Rise Set Times: ',mi.rise_set_times('America/Chicago'))
 #print(f'Rise Set Times: {mi.rise_set_times('America/Chicago')}')
 print('Add Rise/Set Times')

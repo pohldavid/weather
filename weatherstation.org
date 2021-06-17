@@ -1,5 +1,5 @@
 #+STARTUP: showall
-
+77
 * Python
 1. Read sensor
 2. Store data to CSV for history  [Humidity,Temp,Pressure,DateTime]  TSV so html wont see delimiters?

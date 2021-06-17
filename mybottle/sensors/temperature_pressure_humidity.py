@@ -1,5 +1,5 @@
-import bme280
-import smbus2
+from fake import bme280
+from fake import smbus2
 from datetime import datetime
 from datetime import date
 
