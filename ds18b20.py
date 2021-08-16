@@ -8,9 +8,10 @@ https://www.circuitbasics.com/raspberry-pi-ds18b20-temperature-sensor-tutorial/#
 '''
 # this file is diffferent for each use case 
 #one_wire_file = '/sys/bus/w1/devices/28-3c01a8168ea2/w1_slave'
-one_wire_file = '/sys/bus/w1/devices/00-c00000000000/w1_slave'
-
+#one_wire_file = '/sys/bus/w1/devices/00-c00000000000/w1_slave'
+one_wire_file = '/sys/bus/w1/devices/28-0301a279045a/w1_slave'
 '''
+
 file is of the form:
 
 c4 01 55 05 7f a5 a5 66 bc : crc=bc YES

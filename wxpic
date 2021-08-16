@@ -33,13 +33,14 @@ date = date.decode('utf-8').strip()
 cam = picamera.PiCamera()
 cam.vflip = True
 cam.hflip=True
-cam.rotation = 270
+cam.rotation = 0
 
 
-cam.resolution=(1024,768)
+cam.resolution=(1920,1080)
+#cam.resolution = 'HD'
 cam.annotate_background = picamera.Color('black')
 cam.start_preview()
-time.sleep(2)
+time.sleep(3)
 cam.annotate_text = str(date) + '\n' + current
 cam.capture('/home/pi/weather/stills/'+str(datetime.now())+'.jpg')
 
