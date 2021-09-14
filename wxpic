@@ -14,7 +14,8 @@ bus = smbus2.SMBus(port)
 
 bme280.load_calibration_params(bus,address)
 bme280_data = bme280.sample(bus,address)
-humidity  = bme280_data.humidity
+humidity_offset = 0 # Added 2021/08/31
+humidity  = bme280_data.humidity - humidity_offset
 pressure  = bme280_data.pressure/33.8639
 temperature = (bme280_data.temperature * 9.0/5.0) +32
 
@@ -33,14 +34,14 @@ date = date.decode('utf-8').strip()
 cam = picamera.PiCamera()
 cam.vflip = True
 cam.hflip=True
-cam.rotation = 0
+cam.rotation = 90
 
 
 cam.resolution=(1920,1080)
 #cam.resolution = 'HD'
 cam.annotate_background = picamera.Color('black')
 cam.start_preview()
-time.sleep(3)
+time.sleep(5)
 cam.annotate_text = str(date) + '\n' + current
 cam.capture('/home/pi/weather/stills/'+str(datetime.now())+'.jpg')
 
