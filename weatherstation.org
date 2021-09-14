@@ -3,6 +3,7 @@
 * Python
 1. Read sensor
 2. Store data to CSV for history  [Humidity,Temp,Pressure,DateTime]  TSV so html wont see delimiters?
+   1. https://csvkit.readthedocs.io/en/latest/
 3. Store data to .md file
 4. Matplotlib chart
 5. Python concatenate header, <meta http-equiv='refresh' content='15'/> </br>, chart, footer
