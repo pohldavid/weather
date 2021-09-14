@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+date
+
+date > date.txt
+
+vcgencmd measure_temp > temp.txt
